@@ -7,7 +7,7 @@ import { sleep } from "../../helpers/sleep";
 const getLabels = async (): Promise<Label[]> => {
 
     await sleep(2)
-    const { data } = await gitHubApi.get('/labels');
+    const { data } = await gitHubApi.get('/labels?per_page=100');
 
     return data
 }
@@ -18,8 +18,8 @@ export const useLabels = () => {
         getLabels,
         {
             staleTime: 1000 * 60 * 60,
-            // placeholderData:[],
-            initialData: [
+            // initialData:[],
+            placeholderData: [
 
                 {
                     id: 2281766624,

@@ -7,7 +7,7 @@ import { sleep } from "../../helpers/sleep"
 
 
 
-const getIssueInfo = async (issueNumber: number): Promise<Issue> => {
+export const getIssueInfo = async (issueNumber: number): Promise<Issue> => {
     await sleep(2)
 
     const { data } = await gitHubApi.get<Issue>(`/issues/${issueNumber}`)
@@ -15,7 +15,7 @@ const getIssueInfo = async (issueNumber: number): Promise<Issue> => {
     return data;
 }
 
-const getIssueComments = async (issueNumber: number): Promise<Issue[]> => {
+export const getIssueComments = async (issueNumber: number): Promise<Issue[]> => {
     await sleep(2)
 
     const { data } = await gitHubApi.get<Issue[]>(`/issues/${issueNumber}/comments`)
@@ -42,6 +42,9 @@ export const useIssue = (issueNumber: number) => {
 
     return {
         issueQuery,
-        commentsQuery
+        commentsQuery,
+
+        getIssueComments,
+        getIssueInfo,
     }
 }
