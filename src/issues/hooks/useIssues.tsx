@@ -4,7 +4,7 @@ import { Issue, State } from "../interfaces"
 import { sleep } from "../../helpers/sleep";
 
 interface Props {
-    state: State;
+    state?: State;
     labels: string[];
 }
 

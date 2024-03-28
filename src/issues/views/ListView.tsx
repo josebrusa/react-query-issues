@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { IssueList } from '../components/IssueList';
 import { LabelPicker } from '../components/LabelPicker';
-import { useIssues } from '../hooks';
 import { LoadingIcon } from '../../shared/components/LoadingIcon';
+import { useIssues } from '../hooks';
 import { State } from '../interfaces';
 
 
